@@ -1,0 +1,44 @@
+#teamRow {
+  width: 80%;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 20px;
+  font-family:Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.534);
+  line-height: 100px;
+  position: relative;
+  display: flex;
+}
+
+#img {
+  width: 40px;
+  position: absolute;
+  top: 35%;
+}
+
+html {
+  background: linear-gradient(
+    179.4deg,
+    rgb(12, 20, 69) -16.9%,
+    rgb(71, 30, 84) 119.9%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#name{
+    margin-left: 50px;
+}
+
+#points{
+    position: absolute;
+    right: 50px;
+    font-weight: bold;
+}
+
+body{
+    padding: 3rem;
+}
