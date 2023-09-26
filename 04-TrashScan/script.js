@@ -72,10 +72,31 @@ function SimpleTSP() {
 }
 
 function initMap() {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 47.4125, lng: 9.74355 }, // Set the initial map center
-    zoom: 15, // Set the initial zoom level
-  });
+    const map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: 47.4125, lng: 9.74355 },
+      zoom: 13,
+      styles: [
+        {
+          featureType: "poi",
+          elementType: "labels",
+          stylers: [{ visibility: "off" }],
+        },
+        {
+          featureType: "road",
+          elementType: "labels",
+          stylers: [{ visibility: "off" }],
+        },
+        {
+          featureType: "transit",
+          elementType: "labels",
+          stylers: [{ visibility: "off" }],
+        },
+      ],
+    });
+  
+    // Your markers code remains unchanged.
+  
+  
 
   // Create an array of markers with their positions and custom titles
   let red = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
@@ -95,11 +116,21 @@ function initMap() {
     { lat: 47.422, lng: 9.751, title: "Marker 5", icon: red },
     { lat: 47.424, lng: 9.753, title: "Marker 6", icon: green },
     {
+      lat: 47.409602701097,
+      lng: 9.724056374784443,
+      title: "Marker 8",
+      icon: green,
+    },
+    {
       lat: 47.41000393653498,
       lng: 9.743496003903328,
       title: "Marker 7",
       icon: red,
     },
+    {lat: 47.4107193803123, lng:9.733852370986181, title: "Marker 9", icon: green},
+    {lat: 47.42478185167308, lng: 9.726834342681482, title: "Marker 10", icon: red},
+    {lat: 47.43410765032678, lng: 9.741204591191707, title: "Marker 11", icon: red},
+    {lat: 47.422068581745755, lng: 9.748640359570645, title: "Marker 12", icon: red}
   ];
 
   // Loop through the markers array and add them to the map
@@ -175,11 +206,13 @@ function initMap() {
   document.getElementById("redBins").innerHTML =
     "<div class='red'>" + ammountRed + "</div>" + "&nbsp;&nbsp;bins are full.";
   document.getElementById("greenBins").innerHTML =
-    "<div class='green'>" + ammountGreen + "</div>" + "&nbsp;&nbsp;bins aren't full.";
+    "<div class='green'>" +
+    ammountGreen +
+    "</div>" +
+    "&nbsp;&nbsp;bins aren't full.";
   document.getElementById("totalBins").innerHTML =
     "<div class='total'>" +
-    ammountGreen +
-    ammountRed +
+    (ammountGreen + ammountRed) +
     "</div>" +
     "&nbsp;&nbsp;active bins.";
 }
@@ -191,7 +224,7 @@ function arePositionsEqual(pos1, pos2) {
 
 var today = new Date();
 var date =
-  today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
+  today.getDate() + "." + (today.getMonth() + 1) + "." + today.getFullYear();
 var hours = today.getHours();
 var minutes = today.getMinutes();
 
