@@ -72,31 +72,29 @@ function SimpleTSP() {
 }
 
 function initMap() {
-    const map = new google.maps.Map(document.getElementById("map"), {
-      center: { lat: 47.4125, lng: 9.74355 },
-      zoom: 13,
-      styles: [
-        {
-          featureType: "poi",
-          elementType: "labels",
-          stylers: [{ visibility: "off" }],
-        },
-        {
-          featureType: "road",
-          elementType: "labels",
-          stylers: [{ visibility: "off" }],
-        },
-        {
-          featureType: "transit",
-          elementType: "labels",
-          stylers: [{ visibility: "off" }],
-        },
-      ],
-    });
-  
-    // Your markers code remains unchanged.
-  
-  
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 47.4125, lng: 9.74355 },
+    zoom: 13,
+    styles: [
+      {
+        featureType: "poi",
+        elementType: "labels",
+        stylers: [{ visibility: "off" }],
+      },
+      {
+        featureType: "road",
+        elementType: "labels",
+        stylers: [{ visibility: "off" }],
+      },
+      {
+        featureType: "transit",
+        elementType: "labels",
+        stylers: [{ visibility: "off" }],
+      },
+    ],
+  });
+
+  // Your markers code remains unchanged.
 
   // Create an array of markers with their positions and custom titles
   let red = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
@@ -110,7 +108,7 @@ function initMap() {
       icon: blue,
     },
     { lat: 47.4125, lng: 9.74355, title: "Marker 1", icon: red },
-    { lat: 47.415, lng: 9.745, title: "Marker 2", icon: green },
+  //  { lat: 47.415, lng: 9.745, title: "Marker 2", icon: green },
     { lat: 47.418, lng: 9.747, title: "Marker 3", icon: red },
     { lat: 47.42, lng: 9.749, title: "Marker 4", icon: red },
     { lat: 47.422, lng: 9.751, title: "Marker 5", icon: red },
@@ -127,10 +125,30 @@ function initMap() {
       title: "Marker 7",
       icon: red,
     },
-    {lat: 47.4107193803123, lng:9.733852370986181, title: "Marker 9", icon: green},
-    {lat: 47.42478185167308, lng: 9.726834342681482, title: "Marker 10", icon: red},
-    {lat: 47.43410765032678, lng: 9.741204591191707, title: "Marker 11", icon: red},
-    {lat: 47.422068581745755, lng: 9.748640359570645, title: "Marker 12", icon: red}
+/*    {
+      lat: 47.4107193803123,
+      lng: 9.733852370986181,
+      title: "Marker 9",
+      icon: green,
+    }, */
+    {
+      lat: 47.42478185167308,
+      lng: 9.726834342681482,
+      title: "Marker 10",
+      icon: red,
+    },
+    {
+      lat: 47.43410765032678,
+      lng: 9.741204591191707,
+      title: "Marker 11",
+      icon: green,
+    },
+    {
+      lat: 47.422068581745755,
+      lng: 9.748640359570645,
+      title: "Marker 12",
+      icon: red,
+    },
   ];
 
   // Loop through the markers array and add them to the map
@@ -215,6 +233,40 @@ function initMap() {
     (ammountGreen + ammountRed) +
     "</div>" +
     "&nbsp;&nbsp;active bins.";
+
+  directionsService.route(request, function (response, status) {
+    if (status === google.maps.DirectionsStatus.OK) {
+      directionsRenderer.setDirections(response);
+
+      // Extract the route details from the response
+      const route = response.routes[0]; // Assuming there's only one route
+      const legs = route.legs; // Get the legs of the route
+
+      let totalDistance = 0;
+      let totalTime = 0;
+
+      // Calculate the total distance and time from all legs
+      for (let i = 0; i < legs.length; i++) {
+        totalDistance += legs[i].distance.value; // Distance in meters
+        totalTime += legs[i].duration.value; // Duration in seconds
+      }
+
+      // Convert totalDistance to kilometers
+      const distanceInKm = (totalDistance / 1000).toFixed(2); // Convert to 2 decimal places
+
+      // Convert totalTime to hours and minutes
+      const hours = Math.floor(totalTime / 3600);
+      const minutes = Math.floor((totalTime % 3600) / 60);
+
+      // Display the distance and estimated time on the page
+      document.getElementById("distance").innerHTML =
+        "Distance: " + distanceInKm + " km";
+      document.getElementById("duration").innerHTML =
+        "Estimated Time: " + hours + "h " + minutes + "min";
+    } else {
+      window.alert("Directions request failed due to " + status);
+    }
+  });
 }
 
 // Helper function to check if two positions are equal
