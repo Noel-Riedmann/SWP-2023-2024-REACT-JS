@@ -15,7 +15,7 @@ p.then((message) => {
 });
 
 Promise.all([
-    //all functions will be called at the same time (after that then will be called)
+    //all functions will be called at the same time (after that *then* will be called)
     //function1(),
     //function2(),
     //...
@@ -24,7 +24,7 @@ Promise.all([
 })
 
 Promise.race([
-    //all functions will be called at the same time (if one is finished then will be called)
+    //all functions will be called at the same time (if one is finished *then* will be called)
     //function1(),
     //function2(),
     //...
