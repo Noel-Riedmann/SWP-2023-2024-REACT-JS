@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     background-color: #343434;
+    color: white;
 }
 
 .header {
@@ -27,7 +28,7 @@ body {
     justify-content: center;
 }
 
-.buTxt {
+.oeTxt {
     color: #B9B9B9;
     font-size: smaller;
 }
@@ -54,4 +55,13 @@ body {
 .menuButton:hover{
     cursor: pointer;
     background-color: #393939;
+}
+
+.tH{
+    background-color: #b6b6b6;
+    width: 100%;
+    height: 2rem;
+    display: grid;
+    grid-template-columns: 5rem 20rem 2rem 2rem 2rem 2rem 2rem 2rem 18rem 2rem ; /* USE %
+
 }
