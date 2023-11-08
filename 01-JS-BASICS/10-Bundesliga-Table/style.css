@@ -3,6 +3,16 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #343434;
     color: white;
+
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #7a7a7a;
 }
 
 .header {
@@ -52,7 +62,8 @@ body {
     width: 10rem;
 }
 
-.menuButton:hover, .menuButton.active:hover {
+.menuButton:hover,
+.menuButton.active:hover {
     cursor: pointer;
     background-color: #5a5a5a;
 }
@@ -90,11 +101,48 @@ body {
     align-items: center;
 }
 
-.PTS{
+.PTS {
     text-align: end;
     margin-right: 10px
 }
 
-.menuButton.active{
+.menuButton.active {
     background-color: #393939;
+}
+
+.goalTH {
+    background-color: #7a7a7a;
+    width: 100%;
+    height: 4rem;
+    display: grid;
+    grid-template-columns: 10% 85% 5%;
+    align-items: center;
+}
+
+.position {
+    margin-left: 10px;
+}
+
+.goalTR {
+    background-color: #585858;
+    width: 100%;
+    height: 4rem;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    margin-top: .3rem;
+    align-items: center;
+}
+
+.playerPosition {
+    margin-left: 10px;
+}
+
+.goals {
+    text-align: end;
+    margin-right: 10px;
+}
+
+.playerGoals {
+    text-align: end;
+    margin-right: 10px;
 }
