@@ -1,0 +1,19 @@
+.isOff:hover, .isOn:hover{
+    cursor: pointer;
+}
+
+.isOn{
+    border-style: solid;
+    border-radius: 10px;
+    padding: 10px;
+    color: black;
+    background-color: greenyellow;
+}
+
+.isOff{
+    border-style: solid;
+    border-radius: 10px;
+    padding: 10px;
+    color: black;
+    background-color: orange;
+}
