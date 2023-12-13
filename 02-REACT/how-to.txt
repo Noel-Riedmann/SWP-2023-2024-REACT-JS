@@ -3,3 +3,6 @@
 
 create new: 
     npx create-react-app my-app
+
+start:
+    npm start
