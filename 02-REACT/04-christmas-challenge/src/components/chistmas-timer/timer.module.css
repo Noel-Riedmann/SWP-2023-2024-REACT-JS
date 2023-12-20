@@ -1,0 +1,17 @@
+.timer{
+    background-image: url('https://media.istockphoto.com/id/1428402283/photo/original-beautiful-background-on-a-christmas-theme-with-snowdrifts-fir-branches-and-a-place.jpg?s=170667a&w=0&k=20&c=EuLi_qKuSdgA0GLDZ2XW0vAARPvOLKfKgRFrLdd2r3w=');
+    width: 300px;
+    color: black;
+    text-shadow: white 1px 0 10px;
+    text-align: center;
+    height: 130px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.days{
+    font-weight: bold;
+}
