@@ -1,0 +1,25 @@
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container{
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+    box-shadow: #00000059 0px 5px 15px;
+    height: 128px;
+    margin: 20px;
+}
+
+.text{
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.pos{
+    margin-top: 20px;
+}
