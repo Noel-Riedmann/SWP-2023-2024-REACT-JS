@@ -1,5 +1,26 @@
-.container{
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    height: 130px;
+    z-index: 100;
+    border-width: 1px;
+    box-shadow: #00000059 0px 2px 20px;
+  }
+  
+  .list {
+    padding-top: 140px; 
+  }
+  
+  .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 16px;
-}
+  }
+  
+  .searchField {
+    padding: 0.5rem;
+  }
+  
