@@ -45,6 +45,7 @@
     width: 10rem;
 }
 
+
 .menuButton:hover,
 .menuButton.active:hover {
     cursor: pointer;
