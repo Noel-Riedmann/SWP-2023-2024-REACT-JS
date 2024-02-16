@@ -1,0 +1,5 @@
+.header, .table {
+    display: grid;
+    grid-template-columns: 10% 20% repeat(8, 5%);
+  }
+    
