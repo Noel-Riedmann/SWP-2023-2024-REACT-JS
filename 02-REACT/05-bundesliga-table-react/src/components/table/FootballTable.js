@@ -17,7 +17,7 @@ export default function FootballTable() {
     <div>
       <div className={styles.header}>
         <div className={styles.position}>POSITION</div>
-        <div className={styles.teamName}>Team</div>
+        <div className={styles.team}>Team</div>
         <div>MP</div>
         <div>W</div>
         <div>D</div>
@@ -30,7 +30,10 @@ export default function FootballTable() {
       {tableData.map((team, index) => (
         <div className={styles.table}>
           <div className={styles.position}>{index + 1}</div>
-          <div className={styles.teamName}>{team.teamName}</div>
+          <div className={styles.team}>
+            <img className={styles.teamIcon} src={team.teamIconUrl}></img>
+            <div className={styles.teamName}>{team.teamName}</div>
+          </div>
           <div>{team.matches}</div>
           <div>{team.won}</div>
           <div>{team.draw}</div>

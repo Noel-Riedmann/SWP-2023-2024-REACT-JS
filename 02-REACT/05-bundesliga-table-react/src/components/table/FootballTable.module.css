@@ -6,13 +6,13 @@ body{
 .table {
   display: grid;
   text-align: right;
+  align-items: center;
   grid-template-columns: 10% 30% repeat(8, 7.5%);
   padding-left: 1rem;
   padding-right: 1rem;
   color: white;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   margin-bottom: .4rem;
+  height: 50px;
 }
 
 .header{
@@ -25,6 +25,20 @@ body{
 }
 
 .position,
-.teamName {
+.team{
   text-align: left;
+}
+
+.teamIcon{
+  height: 45px;
+  position: relative;
+}
+
+.team{
+  display: flex;
+  align-items: center;
+}
+
+.teamName{
+  padding-left: 1rem;
 }
