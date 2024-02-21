@@ -17,6 +17,7 @@ body{
 
 .header{
   background-color: rgba(217, 217, 217, 0.5);
+  margin-top: .5rem;
 }
 
 .table{
