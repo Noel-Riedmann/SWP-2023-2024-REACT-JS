@@ -1,5 +1,29 @@
-.header, .table {
-    display: grid;
-    grid-template-columns: 10% 20% repeat(8, 5%);
-  }
-    
+body{
+  background-color: #343434;
+}
+
+.header,
+.table {
+  display: grid;
+  text-align: right;
+  grid-template-columns: 10% 30% repeat(8, 7.5%);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: .4rem;
+}
+
+.header{
+  background-color: rgba(217, 217, 217, 0.5);
+}
+
+.table{
+  background-color: rgba(110, 108, 108, 0.5);
+}
+
+.position,
+.teamName {
+  text-align: left;
+}
