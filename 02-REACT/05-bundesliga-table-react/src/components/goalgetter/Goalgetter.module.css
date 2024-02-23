@@ -1,0 +1,29 @@
+body {
+  background-color: #343434;
+}
+
+.header,
+.table {
+  display: grid;
+  text-align: left;
+  align-items: center;
+  grid-template-columns: 10% 45% 45%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: white;
+  margin-bottom: 0.4rem;
+  height: 50px;
+}
+
+.header {
+  background-color: rgba(217, 217, 217, 0.5);
+  margin-top: 0.5rem;
+}
+
+.table {
+  background-color: rgba(110, 108, 108, 0.5);
+}
+
+.goals {
+  text-align: right;
+}

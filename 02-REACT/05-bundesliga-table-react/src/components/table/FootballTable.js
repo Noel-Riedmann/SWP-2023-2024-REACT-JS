@@ -31,7 +31,7 @@ export default function FootballTable() {
         <div className={styles.table}>
           <div className={styles.position}>{index + 1}</div>
           <div className={styles.team}>
-            <img className={styles.teamIcon} src={team.teamIconUrl}></img>
+            <img className={styles.teamIcon} src={team.teamIconUrl} alt={team.teamName + " ICON"}></img>
             <div className={styles.teamName}>{team.teamName}</div>
           </div>
           <div>{team.matches}</div>
